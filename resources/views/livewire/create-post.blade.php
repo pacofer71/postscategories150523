@@ -38,11 +38,11 @@
         </x-slot>
         <x-slot name="footer">
             <div class="flex flex-row-reverse">
-                <button type="submit" wire:click="guardar"
+                <button type="submit" wire:click="guardar" wire:loading.attr="disabled"
                     class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     <i class="fas fa-save"></i>&nbsp;Guardar
                 </button>
-                <button wire:click="cancelar"
+                <button wire:click="cancelar" 
                     class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     <i class="fas fa-xmark"></i>&nbsp;Cancelar</button>
             </div>

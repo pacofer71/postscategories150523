@@ -3,6 +3,7 @@
         <div class="mx-auto px-4 py-4 rounded-2xl shadow-2xl bg-gray-200 w-1/2">
             <form action="{{route('contacto.procesar')}}" method="POST">
                 @csrf
+                <x-form-input name="nombre" label="Nombre de contacto" placeholder="Nombre...." /> 
                 @auth
 
                     @bind(auth()->user())

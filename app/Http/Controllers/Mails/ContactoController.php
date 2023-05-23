@@ -14,12 +14,13 @@ class ContactoController extends Controller
     }
     public function procesarFormContacto(Request $request){
         $request->validate([
+            'nombre'=>['required', 'string', 'min:3'],
             'email'=>['required', 'email'],
             'contenido'=>['required', 'string', 'min:10'],
         ]);
         $email = auth()->user() ? auth()->user()->email : $request->email;
         try{
-            Mail::to('adminsitio@email.com')->send(new ContactoMail($email, $request->contenido));
+            Mail::to('adminsitio@email.com')->send(new ContactoMail($request->nombre, $email, $request->contenido));
         }catch(\Exception $ex){
             return redirect()->route('welcome.inicio')->with('info', 'No se pudo enviar el mensaje, inténtelo más tarde');
         }

@@ -35,8 +35,14 @@ class ShowPosts extends Component
             ->paginate(5);
 
         $categories = Category::all()->pluck('nombre', 'id')->toArray();
+        $categories[-1]='______ Elige una categoría _____';
+        ksort($categories);
 
         return view('livewire.show-posts', compact('posts', 'categories'));
+    }
+
+    public function updatingSearch(){
+        $this->resetPage();
     }
 
     protected function rules(): array

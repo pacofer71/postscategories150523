@@ -1,7 +1,7 @@
 @component('mail::message')
 # FORMULARIO DE CONTACTO
 ## ENVIADO POR 
-# Prueba
+{{$nombre}}
 ## EMAIL DEL REMITENTE
 {{$email}}
 ## CONTENIDO DEL MENSAJE

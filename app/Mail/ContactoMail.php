@@ -15,13 +15,14 @@ class ContactoMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public string $email, $contenido;
+    public string $email, $contenido, $nombre;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(string $email, string $contenido)
+    public function __construct(string $nombre, string $email, string $contenido)
     {
+        $this->nombre=$nombre;
         $this->email=$email;
         $this->contenido=$contenido;
     }
@@ -32,7 +33,7 @@ class ContactoMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address($this->email, "anonimo"),
+            from: new Address($this->email, $this->nombre),
             subject: 'Contacto Mail',
         );
     }
@@ -43,8 +44,9 @@ class ContactoMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mails.contacto',
+            markdown: 'emails.contacto',
             with:[
+                'nombre'=>$this->nombre,
                 'email'=>$this->email,
                 'contenido'=>$this->contenido
             ]

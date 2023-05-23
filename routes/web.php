@@ -46,3 +46,5 @@ Route::post('contacto', [ContactoController::class, 'procesarFormContacto'])->na
 //---------------
 Route::get('/auth/github/redirect', [GithubController::class, 'redirect'])->name('github.redirect');
 Route::get('/auth/github/callback', [GithubController::class, 'callback'])->name('github.callback'); 
+
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);

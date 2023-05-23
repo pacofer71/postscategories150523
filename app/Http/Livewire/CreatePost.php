@@ -16,7 +16,9 @@ class CreatePost extends Component
 
     public function render()
     {
-        $categories=Category::all()->pluck('nombre', 'id')->toArray();
+        $categories = Category::all()->pluck('nombre', 'id')->toArray();
+        $categories[-1]='______ Elige una categoría _____';
+        ksort($categories);
         return view('livewire.create-post', compact('categories'));
     }
 
@@ -42,6 +44,7 @@ class CreatePost extends Component
             'url_img'=>$ruta_imagen
         ]);
         $this->emitTo('show-posts', 'render');
+        $this->emit('mensaje', 'Post Creado');
         $this->cancelar();
         
     }

@@ -1,34 +1,18 @@
-# Proyecto Laravel10 Posts Categories Users
+# Proyecto Ejemplo 15/05/23
+Proyecto realizado en en clase de DWES del ciclo superior de DAW en el [IES Al-Andalus (Almería)](https://www.iesalandalus.org)
 
-Proyecto en Laravel 10 con Jetstream Livewire, login con Socialite y Manual (se utiliza Github para ello) Controladores normales para categories, mensajeria con SweetAlert2, Policies para controlar borrado y edición de posts, Middleware is_admin para que solo los administradores puean hacer el Crud a categories. Para formularios se utiliza: 
-[laravel-form-components](https://packagist.org/packages/protonemedia/laravel-form-components)
+Este proyecto realizado con Laravel 10 cuenta con los siguientes paquetes:
+- [Larave10/JetStream](https://packagist.org/?query=laravel%20jetstream)
+- [Protonemedia/laravel-form-components ](https://packagist.org/packages/protonemedia/laravel-form-components)
+-[Laravel/Socialite](https://packagist.org/packages/laravel/socialite)
 
-
-
-## Appendix
-
-Plantillas en TailwindCss
-
-
-## Authors
-
-- [pacofer71](https://github.com/pacofer71/)
-
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`GITHUB_CLIENT_ID`
-
-`GITHUB_CLIENT_SECRET`
-
-
-## License
-
-[GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
-
-
+## El proyecto implementa entre otras cosas:
+- LiveWire para Crud de la tabla Posts.
+- Controlador **normal** para la tabla Categories.
+- Middleware **is_admin** para trabajar con perfil de usaurio normaly administrador.
+- Policies para controlar que solo el usuario propietario de un post pueda editar/borrar/ver detalle del post.
+- Formulario para enviar un correo de soporte para usuario autenticados y no. 
+- Login con redes socialites (GitHub) en este ejemplo.
 
 ## About Laravel
 
@@ -43,3 +27,38 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
+
+## Learning Laravel
+
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+
+## Laravel Sponsors
+
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+
+### Premium Partners
+
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
+
+
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+El proyecto es libre para su uso didáctico respetando las licencias de Laravel y sus respectivos paquetes
